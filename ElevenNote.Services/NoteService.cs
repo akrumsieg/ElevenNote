@@ -28,7 +28,7 @@ namespace ElevenNote.Services
                 OwnerId = _userId,
                 Title = model.Title,
                 Content = model.Content,
-                CreatedUtc = DateTimeOffset.Now
+                CreatedUtc = DateTimeOffset.UtcNow
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -91,6 +91,16 @@ namespace ElevenNote.Services
                 entity.Content = model.Content;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteNote(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Notes.Single(e => e.NoteId == id && e.OwnerId == _userId);
+                ctx.Notes.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
