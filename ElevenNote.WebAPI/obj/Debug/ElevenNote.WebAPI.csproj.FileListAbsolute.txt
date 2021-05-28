@@ -123,3 +123,5 @@ C:\ElevenFiftyProjects\BlueBadge\ElevenNote\ElevenNote.WebAPI\bin\Microsoft.Code
 C:\ElevenFiftyProjects\BlueBadge\ElevenNote\ElevenNote.WebAPI\obj\Debug\ElevenNote.WebAPI.csproj.CopyComplete
 C:\ElevenFiftyProjects\BlueBadge\ElevenNote\ElevenNote.WebAPI\obj\Debug\ElevenNote.WebAPI.dll
 C:\ElevenFiftyProjects\BlueBadge\ElevenNote\ElevenNote.WebAPI\obj\Debug\ElevenNote.WebAPI.pdb
+C:\ElevenFiftyProjects\BlueBadge\ElevenNote\ElevenNote.WebAPI\bin\Swashbuckle.Core.dll
+C:\ElevenFiftyProjects\BlueBadge\ElevenNote\ElevenNote.WebAPI\bin\WebActivatorEx.dll

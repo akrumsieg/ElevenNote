@@ -19,7 +19,7 @@ namespace ElevenNote.Services
             _userId = userId;
         }
 
-        //method
+        //methods
         //create
         public bool CreateNote(NoteCreate model)
         {

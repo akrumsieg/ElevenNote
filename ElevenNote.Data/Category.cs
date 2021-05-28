@@ -11,6 +11,13 @@ namespace ElevenNote.Data
     {
         [Key]
         public int CategoryId { get; set; }
+
         public string Name { get; set; }
+
+        [Required]
+        public Guid OwnerId { get; set; }
+
+        public virtual List<Note> Notes { get; set; } = new List<Note>();
+
     }
 }
