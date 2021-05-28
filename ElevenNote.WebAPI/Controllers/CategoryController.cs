@@ -34,11 +34,11 @@ namespace ElevenNote.WebAPI.Controllers
 
 
         //get all method
-        //public IHttpActionResult Get()
-        //{
-        //    CategoryService categoryService = CreateCategoryService();
-        //    var categories = categoryService.GetCategories();
-        //    return Ok(categories);
-        //}
+        public IHttpActionResult Get()
+        {
+            CategoryService categoryService = CreateCategoryService();
+            var categories = categoryService.GetCategories();
+            return Ok(categories);
+        }
     }
 }

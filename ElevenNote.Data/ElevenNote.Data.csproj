@@ -90,6 +90,10 @@
     <Compile Include="Migrations\202105281402260_InitialCreate.Designer.cs">
       <DependentUpon>202105281402260_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105281908129_EditCategory.cs" />
+    <Compile Include="Migrations\202105281908129_EditCategory.Designer.cs">
+      <DependentUpon>202105281908129_EditCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,6 +105,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105281402260_InitialCreate.resx">
       <DependentUpon>202105281402260_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105281908129_EditCategory.resx">
+      <DependentUpon>202105281908129_EditCategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
