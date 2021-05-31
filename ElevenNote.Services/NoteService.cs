@@ -103,6 +103,16 @@ namespace ElevenNote.Services
             }
         }
 
+        public bool ToggleStar(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Notes.Single(e => e.NoteId == id && e.OwnerId == _userId);
+                entity.IsStarred = !entity.IsStarred;
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
         public bool DeleteNote(int id)
         {
             using (var ctx = new ApplicationDbContext())

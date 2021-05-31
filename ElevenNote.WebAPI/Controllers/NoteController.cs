@@ -31,8 +31,8 @@ namespace ElevenNote.WebAPI.Controllers
         //get by id
         public IHttpActionResult Get(int id)
         {
-            NoteService noteService = CreateNoteService();
-            var note = noteService.GetNoteById(id);
+            NoteService service = CreateNoteService();
+            var note = service.GetNoteById(id);
             return Ok(note);
         }
 
@@ -42,7 +42,7 @@ namespace ElevenNote.WebAPI.Controllers
             if (!ModelState.IsValid) return BadRequest(ModelState);
             var service = CreateNoteService();
             if (!service.CreateNote(note)) return InternalServerError();
-            return Ok();
+            return Ok("Note creation successful!");
         }
 
         //update
@@ -52,6 +52,13 @@ namespace ElevenNote.WebAPI.Controllers
             var service = CreateNoteService();
             if (!service.UpdateNote(note)) return InternalServerError();
             return Ok("Update successful!");
+        }
+
+        public IHttpActionResult PutToggleStar(int id)
+        {
+            NoteService service = CreateNoteService();
+            if (!service.ToggleStar(id)) return InternalServerError();
+            return Ok("Star toggled!");
         }
 
         //delete
