@@ -94,6 +94,10 @@
     <Compile Include="Migrations\202105281908129_EditCategory.Designer.cs">
       <DependentUpon>202105281908129_EditCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105311605508_AddIsStarredProp.cs" />
+    <Compile Include="Migrations\202105311605508_AddIsStarredProp.Designer.cs">
+      <DependentUpon>202105311605508_AddIsStarredProp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105281908129_EditCategory.resx">
       <DependentUpon>202105281908129_EditCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105311605508_AddIsStarredProp.resx">
+      <DependentUpon>202105311605508_AddIsStarredProp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

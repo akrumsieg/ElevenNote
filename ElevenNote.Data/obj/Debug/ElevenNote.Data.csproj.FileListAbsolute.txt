@@ -36,3 +36,4 @@ C:\ElevenFiftyProjects\BlueBadge\ElevenNote\ElevenNote.Data\obj\Debug\ElevenNote
 C:\ElevenFiftyProjects\BlueBadge\ElevenNote\ElevenNote.Data\obj\Debug\ElevenNote.Data.Migrations.InitialCreate.resources
 C:\ElevenFiftyProjects\BlueBadge\ElevenNote\ElevenNote.Data\obj\Debug\ElevenNote.Data.csproj.GenerateResource.cache
 C:\ElevenFiftyProjects\BlueBadge\ElevenNote\ElevenNote.Data\obj\Debug\ElevenNote.Data.Migrations.EditCategory.resources
+C:\ElevenFiftyProjects\BlueBadge\ElevenNote\ElevenNote.Data\obj\Debug\ElevenNote.Data.Migrations.AddIsStarredProp.resources

@@ -21,6 +21,9 @@ namespace ElevenNote.Data
         public Guid OwnerId { get; set; }
 
         [Required]
+        public bool IsStarred { get; set; }
+
+        [Required]
         public string Title { get; set; }
 
         [Required]
