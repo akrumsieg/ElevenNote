@@ -36,7 +36,7 @@ namespace ElevenNote.Services
             }
         }
 
-        //get all
+        //read - get all
         public IEnumerable<CategoryListItem> GetCategories()
         {
             using (var ctx = new ApplicationDbContext())
@@ -51,6 +51,31 @@ namespace ElevenNote.Services
                     }
                 );
                 return query.ToArray();
+            }
+        }
+
+        //update
+        public bool UpdateCategory(CategoryEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Categories.Single
+                    (e => e.CategoryId == model.CategoryId && e.OwnerId == _userId);
+                entity.Name = model.Name;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        //delete
+        public bool DeleteCategory(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Categories.Single
+                    (e => e.CategoryId == id && e.OwnerId == _userId);
+                ctx.Categories.Remove(entity);
+                return ctx.SaveChanges() == 1;
             }
         }
     }

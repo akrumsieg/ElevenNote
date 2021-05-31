@@ -54,7 +54,8 @@ namespace ElevenNote.Services
                                 {
                                     NoteId = e.NoteId,
                                     Title = e.Title,
-                                    CreatedUtc = e.CreatedUtc
+                                    CreatedUtc = e.CreatedUtc,
+                                    CategoryId = e.CategoryId
                                 }
                         );
                 return query.ToArray();
@@ -72,6 +73,7 @@ namespace ElevenNote.Services
                 return new NoteDetail
                 {
                     NoteId = entity.NoteId,
+                    CategoryId = entity.CategoryId,
                     Title = entity.Title,
                     Content = entity.Content,
                     CreatedUtc = entity.CreatedUtc,
@@ -91,6 +93,7 @@ namespace ElevenNote.Services
                 entity.Title = model.Title;
                 entity.Content = model.Content;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
+                entity.CategoryId = model.CategoryId;
 
                 return ctx.SaveChanges() == 1;
             }

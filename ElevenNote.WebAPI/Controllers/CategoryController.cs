@@ -19,26 +19,43 @@ namespace ElevenNote.WebAPI.Controllers
         private CategoryService CreateCategoryService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId()); //STUDY!
-            var categoryService = new CategoryService(userId); //creating a category service for a particular user
-            return categoryService;
+            var service = new CategoryService(userId); //creating a category service for a particular user
+            return service;
         }
 
         //create
-        public IHttpActionResult Post(CategoryCreate category)
+        public IHttpActionResult Post(CategoryCreate model)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             var service = CreateCategoryService();
-            if (!service.CreateCategory(category)) return InternalServerError();
+            if (!service.CreateCategory(model)) return InternalServerError();
             return Ok("Category was successfully created!");
         }
 
 
-        //get all method
+        //read - get all method
         public IHttpActionResult Get()
         {
-            CategoryService categoryService = CreateCategoryService();
-            var categories = categoryService.GetCategories();
+            var service = CreateCategoryService();
+            var categories = service.GetCategories();
             return Ok(categories);
+        }
+
+        //update
+        public IHttpActionResult Put(CategoryEdit model)
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            var service = CreateCategoryService();
+            if (!service.UpdateCategory(model)) return InternalServerError();
+            return Ok("Category was successfully updated!");
+        }
+
+        //delete
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateCategoryService();
+            if (!service.DeleteCategory(id)) return InternalServerError();
+            return Ok("Category was successfully deleted!");
         }
     }
 }
