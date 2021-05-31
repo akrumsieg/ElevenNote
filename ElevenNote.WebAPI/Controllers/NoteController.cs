@@ -36,6 +36,15 @@ namespace ElevenNote.WebAPI.Controllers
             return Ok(note);
         }
 
+        //get starred or not-starred
+        [Route("api/Note/{starredOrNot:bool}")]
+        public IHttpActionResult Get(bool starredOrNot)
+        {
+            NoteService service = CreateNoteService();
+            var notes = service.GetStarredNotes(starredOrNot);
+            return Ok(notes);
+        }
+
         //create
         public IHttpActionResult Post(NoteCreate note)
         {

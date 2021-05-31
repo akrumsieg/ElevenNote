@@ -64,6 +64,24 @@ namespace ElevenNote.Services
             }
         }
 
+        public IEnumerable<NoteListItem> GetStarredNotes(bool trueOrFalse)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx.Notes.Where(e => e.IsStarred == trueOrFalse && e.OwnerId == _userId)
+                    .Select(e => new NoteListItem
+                    {
+                        NoteId = e.NoteId,
+                        CategoryId = e.CategoryId,
+                        IsStarred = e.IsStarred,
+                        Title = e.Title,
+                        CreatedUtc = e.CreatedUtc
+                    }
+                    );
+                return query.ToArray();
+            }
+        }
+
         public NoteDetail GetNoteById(int id)
         {
             using (var ctx = new ApplicationDbContext())
